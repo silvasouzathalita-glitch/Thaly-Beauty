@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thaly Beauty | Beleza & Autocuidado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body {
+      background: #f9f3ff;
+      color: #3d2931;
+    }
+
+    /* HEADER */
+    .announcement {
+      background: #5c3c8c;
+      color: #fff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    header {
+      background: #fff;
+      height: 82px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee4df;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      font-weight: bold;
+      color: #a750c3;
+    }
+
+    .logo span {
+      font-weight: normal;
+      color: #e58ec5;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #49343c;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #b15bc7;
+    }
+
+    .cart-button {
+      border: none;
+      background: linear-gradient(135deg, #b85ac9, #f07db5);
+      color: white;
+      padding: 11px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 590px;
+      padding: 82px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #f5ecff 0%, #fbe9f3 100%);
+      overflow: hidden;
+    }
+
+    .hero-text {
+      max-width: 570px;
+    }
+
+    .hero-small {
+      color: #a84bc3;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 66px);
+      line-height: 1.1;
+      margin: 18px 0;
+      color: #6d3e8c;
+    }
+
+    .hero h1 span {
+      color: #e497bf;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #604852;
+      margin-bottom: 30px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #b85ac9, #f07db5);
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero-button:hover {
+      background: linear-gradient(135deg, #9d4cb6, #de6da8);
+      transform: translateY(-2px);
+    }
+
+    .hero-circle {
+      width: min(44vw, 560px);
+      height: 560px;
+      border-radius: 34px 34px 120px 120px;
+      background-color: #f2dff4;
+      background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=85");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 0 24px 50px rgba(91,55,40,0.18);
+      transform: rotate(2deg);
+      overflow: hidden;
+    }
+
+    .catalog-photo {
+      display: none;
+    }
+
+    /* BENEFÍCIOS */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 35px 7%;
+      background: white;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .benefit-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      font-size: 25px;
+      line-height: 54px;
+      margin-bottom: 8px;
+    }
+
+    .benefit h3 {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .benefit p {
+      font-size: 13px;
+      color: #806b73;
+    }
+
+    /* SEÇÕES */
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      color: #6d3e8c;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #806b73;
+      margin-bottom: 45px;
+    }
+
+    /* CATEGORIAS */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .category {
+      background: white;
+      border-radius: 8px;
+      padding: 25px 15px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #f5e1e8;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(145, 92, 195, 0.12);
+    }
+
+    .category-icon {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      font-size: 38px;
+      line-height: 86px;
+      margin-bottom: 12px;
+    }
+
+    .category h3 {
+      color: #563b45;
+      font-size: 16px;
+    }
+
+    /* PRODUTOS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #f2e1e7;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(120,60,80,0.12);
+    }
+
+    .favorite {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0;
+      z-index: 2;
+    }
+
+    .favorite::before {
+      content: "♡";
+      color: #b83268;
+      font-size: 22px;
+      line-height: 35px;
+    }
+
+    .favorite.active::before {
+      content: "♥";
+    }
+
+    .product-image {
+      height: 230px;
+      background: #eee3dc center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .rating {
+      color: #c88a3d;
+      font-size: 0;
+      margin-top: 10px;
+    }
+
+    .rating::before {
+      content: "★★★★★";
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .rating span {
+      font-size: 12px;
+    }
+
+    .installment {
+      display: block;
+      color: #806b73;
+      font-size: 12px;
+      margin: -8px 0 14px;
+    }
+
+    .category-name {
+      font-size: 11px;
+      color: #ab5ac9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product h3 {
+      margin: 7px 0;
+      color: #49343c;
+    }
+
+    .product-description {
+      min-height: 42px;
+      font-size: 13px;
+      color: #806b73;
+      line-height: 1.5;
+      margin: 8px 0 12px;
+    }
+
+    .product-review {
+      display: block;
+      font-size: 12px;
+      color: #8d5c7a;
+      margin: 8px 0 10px;
+      font-style: italic;
+    }
+
+    .price {
+      font-size: 21px;
+      font-weight: bold;
+      color: #9d4cb6;
+      margin: 15px 0;
+    }
+
+    .buy-button {
+      width: 100%;
+      border: none;
+      background: linear-gradient(135deg, #7b4aa5, #d86aaa);
+      color: white;
+      padding: 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy-button:hover {
+      background: linear-gradient(135deg, #614198, #c75e9f);
+    }
+
+    /* BANNER AUTOCUIDADO */
+    .selfcare {
+      background: #f3e4fb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .selfcare-text {
+      max-width: 600px;
+    }
+
+    .selfcare h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      color: #5a2d7d;
+      margin-bottom: 15px;
+    }
+
+    .selfcare p {
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #60434d;
+    }
+
+    .selfcare-image {
+      width: min(38vw, 440px);
+      height: 280px;
+      border-radius: 8px;
+      background: url("https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85") center/cover;
+      box-shadow: 0 18px 35px rgba(91,55,40,0.14);
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      text-align: center;
+      background: white;
+    }
+
+    .newsletter p {
+      color: #806b73;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .newsletter input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #e5ccd5;
+      border-radius: 30px 0 0 30px;
+      outline: none;
+    }
+
+    .newsletter button {
+      border: none;
+      background: linear-gradient(135deg, #b85ac9, #f07db5);
+      color: white;
+      padding: 0 25px;
+      border-radius: 0 30px 30px 0;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #5c3c8c 0%, #7d4ba2 100%);
+      color: white;
+      padding: 50px 7% 25px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #f3d9ef;
+      line-height: 1.8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 20px;
+      color: #f6def1;
+      font-size: 13px;
+    }
+
+    /* CARRINHO */
+    .cart-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+    }
+
+    .cart {
+      background: white;
+      width: 420px;
+      max-width: 95%;
+      height: 100%;
+      margin-left: auto;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .cart-header h2 {
+      color: #6d3e8c;
+    }
+
+    .close-cart {
+      border: none;
+      background: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .remove {
+      border: none;
+      background: #f4d9f0;
+      color: #8a3d9e;
+      padding: 6px 10px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .cart-total {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 25px 0;
+      color: #6d3e8c;
+    }
+
+    .checkout {
+      width: 100%;
+      border: none;
+      background: linear-gradient(135deg, #b85ac9, #f07db5);
+      color: white;
+      padding: 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .endereco-form {
+      display: none;
+      margin-top: 20px;
+      padding: 18px;
+      background: #fff7fa;
+      border: 1px solid #efd2dc;
+      border-radius: 18px;
+      box-shadow: inset 0 0 0 1px rgba(184, 50, 104, 0.04);
+    }
+
+    .endereco-form h3 {
+      margin: 0 0 14px;
+      color: #6d3e8c;
+      font-size: 22px;
+    }
+
+    .endereco-form label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #5a3a44;
+      font-size: 14px;
+    }
+
+    .endereco-form input {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #e8d9df;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .endereco-form button {
+      width: 100%;
+      margin-top: 10px;
+      border: none;
+      background: linear-gradient(135deg, #7b4aa5, #d86aaa);
+      color: white;
+      padding: 14px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .toast {
+      position: fixed;
+      inset: 0;
+      background: rgba(42, 20, 48, 0.74);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.28s ease, visibility 0.28s ease;
+      z-index: 3000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .toast-card {
+      background: white;
+      color: #43244d;
+      width: min(100%, 520px);
+      border-radius: 30px;
+      padding: 34px 28px;
+      text-align: center;
+      box-shadow: 0 22px 40px rgba(32, 18, 42, 0.22);
+    }
+
+    .toast-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8d4ec7, #f07db5);
+      color: white;
+      font-size: 38px;
+      line-height: 72px;
+      font-weight: bold;
+    }
+
+    .toast-card h3 {
+      margin-bottom: 10px;
+      color: #6d3e8c;
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .toast-card p {
+      color: #684c5c;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .toast-code {
+      display: inline-block;
+      margin-top: 8px;
+      background: #f7e8f8;
+      color: #7b3b98;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .tracking-box {
+      display: none;
+      margin-top: 22px;
+      background: linear-gradient(135deg, #f9f1ff, #fff5fa);
+      border: 1px solid #e9d6f2;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .tracking-box h4 {
+      color: #6d3e8c;
+      margin-bottom: 10px;
+    }
+
+    .tracking-code {
+      display: inline-block;
+      font-weight: 700;
+      color: #8e2853;
+      background: #f8e7f4;
+      border-radius: 999px;
+      padding: 8px 12px;
+      margin-bottom: 12px;
+      letter-spacing: 0.8px;
+    }
+
+    .tracking-status {
+      font-size: 14px;
+      color: #5d3a57;
+      line-height: 1.6;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .hero {
+        text-align: center;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      .hero-circle {
+        width: 280px;
+        height: 280px;
+        font-size: 80px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .selfcare {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .selfcare-image {
+        width: 100%;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter input,
+      .newsletter button {
+        border-radius: 30px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="announcement">Frete grátis nas compras acima de R$ 149 · Parcele em até 3x sem juros</div>
+
+<!-- HEADER -->
+<header>
+
+  <div class="logo">
+    Thaly <span>Beauty</span>
+  </div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#autocuidado">Autocuidado</a>
+    <a href="#contato">Contato</a>
+
+    <button class="cart-button" onclick="abrirCarrinho()">
+      🛍️ Carrinho (<span id="contador">0</span>)
+    </button>
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+
+  <div class="hero-text">
+
+    <div class="hero-small">
+      Coleção primavera 2026
+    </div>
+
+    <h1>
+      Você na sua
+      <span>MELHOR versão.</span>
+    </h1>
+
+    <p>
+      Encontre maquiagem, perfumes, skincare e cuidados para o cabelo
+      escolhidos para realçar a sua beleza todos os dias.
+    </p>
+
+    <a href="#produtos" class="hero-button">
+      Comprar agora
+    </a>
+
+  </div>
+
+      <div class="hero-circle" aria-label="Catálogo com maquiagem em destaque"></div>
+
+</section>
+
+
+<!-- BENEFÍCIOS -->
+<div class="benefits">
+
+  <div class="benefit">
+    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=180&q=80');">🚚</div>
+    <h3>Envio rápido</h3>
+    <p>Receba seus produtos com praticidade.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=180&q=80');">💝</div>
+    <h3>Feito para você</h3>
+    <p>Produtos selecionados com carinho.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=180&q=80');">🔒</div>
+    <h3>Compra segura</h3>
+    <p>Seus dados protegidos.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=180&q=80');">💬</div>
+    <h3>Atendimento</h3>
+    <p>Estamos aqui para ajudar.</p>
+  </div>
+
+</div>
+
+
+<!-- CATEGORIAS -->
+<section id="categorias">
+
+  <h2 class="section-title">
+    Encontre seu ritual
+  </h2>
+
+  <p class="section-subtitle">
+    Tudo para cuidar de você da cabeça aos pés.
+  </p>
+
+  <div class="categories">
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=240&q=80');">🧴</div>
+      <h3>Skincare</h3>
+    </div>
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=240&q=80');">💇‍♀️</div>
+      <h3>Cabelos</h3>
+    </div>
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=240&q=80');">🧼</div>
+      <h3>Corpo</h3>
+    </div>
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=240&q=80');">💄</div>
+      <h3>Maquiagem</h3>
+    </div>
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=240&q=80');">🎁</div>
+      <h3>Kits</h3>
+    </div>
+
+    <div class="category">
+      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=240&q=80');">🌸</div>
+      <h3>Perfumes</h3>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+<section id="produtos">
+
+  <h2 class="section-title">
+    Mais amados
+  </h2>
+
+  <p class="section-subtitle">
+    Produtos para deixar sua rotina de autocuidado ainda mais gostosa.
+  </p>
+
+  <div class="products">
+
+    <!-- PRODUTO 1 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">
+        Favoritar
+      </button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+
+        <div class="category-name">
+          Skincare
+        </div>
+
+        <h3>Hidratante Facial Glow</h3>
+
+        <div class="rating">5,0 <span>(28 avaliações)</span></div>
+
+        <p class="product-description">
+          Hidratação leve para pele sequinha, com textura suave e acabamento iluminado.
+        </p>
+        <span class="product-review">“Minha pele ficou macia e com cara de bem cuidada.”</span>
+
+        <div class="price">
+          R$ 59,90
+        </div>
+
+        <small class="installment">ou 3x de R$ 19,97 sem juros</small>
+
+        <button class="buy-button"
+          onclick="adicionarCarrinho('Hidratante Facial Glow', 59.90)">
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 2 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">
+        Favoritar
+      </button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+
+        <div class="category-name">
+          Corpo
+        </div>
+
+        <h3>Body Scrub Rosé</h3>
+
+        <div class="rating">5,0 <span>(19 avaliações)</span></div>
+
+        <p class="product-description">
+          Esfoliante corporal com textura cremosa para renovar a pele e deixar a sensação suave.
+        </p>
+        <span class="product-review">“A pele fica incrível e a sensação depois do banho é maravilhosa.”</span>
+
+        <div class="price">
+          R$ 44,90
+        </div>
+
+        <small class="installment">ou 2x de R$ 22,45 sem juros</small>
+
+        <button class="buy-button"
+          onclick="adicionarCarrinho('Body Scrub Rosé', 44.90)">
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 3 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">
+        Favoritar
+      </button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+
+        <div class="category-name">
+          Maquiagem
+        </div>
+
+        <h3>Gloss Pink Shine</h3>
+
+        <div class="rating">5,0 <span>(42 avaliações)</span></div>
+
+        <p class="product-description">
+          Brilho delicado com efeito hidratante para deixar os lábios com acabamento bonito e leve.
+        </p>
+        <span class="product-review">“Fica lindo sem pesar e deixa o make bem fresquinho.”</span>
+
+        <div class="price">
+          R$ 34,90
+        </div>
+
+        <small class="installment">ou 2x de R$ 17,45 sem juros</small>
+
+        <button class="buy-button"
+          onclick="adicionarCarrinho('Gloss Pink Shine', 34.90)">
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 4 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">
+        Favoritar
+      </button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=85" alt="Máscara para cabelo Thaly Beauty"></div>
+
+      <div class="product-info">
+
+        <div class="category-name">
+          Cabelos
+        </div>
+
+        <h3>Hair Mask Nutrição</h3>
+
+        <div class="rating">5,0 <span>(16 avaliações)</span></div>
+
+        <p class="product-description">
+          Máscara nutritiva para cabelos ressecados, com foco em brilho, maciez e hidratação profunda.
+        </p>
+        <span class="product-review">“O cabelo fica bem menos opaco e muito mais macio.”</span>
+
+        <div class="price">
+          R$ 54,90
+        </div>
+
+        <small class="installment">ou 3x de R$ 18,30 sem juros</small>
+
+        <button class="buy-button"
+          onclick="adicionarCarrinho('Hair Mask Nutrição', 54.90)">
+          Adicionar ao carrinho
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 5 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+        <div class="category-name">Maquiagem</div>
+        <h3>Paleta Nude Essentials</h3>
+        <div class="rating">5,0 <span>(31 avaliações)</span></div>
+        <p class="product-description">Paleta com cores versáteis para criar looks naturais, sofisticados e bem elegantes.</p>
+        <span class="product-review">“As cores são lindas e a pigmentação surpreende.”</span>
+        <div class="price">R$ 79,90</div>
+        <small class="installment">ou 3x de R$ 26,63 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Paleta Nude Essentials', 79.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 6 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+        <div class="category-name">Perfume</div>
+        <h3>Perfume Aura Floral</h3>
+        <div class="rating">5,0 <span>(24 avaliações)</span></div>
+        <p class="product-description">Fragrância floral delicada, elegante e marcante, ideal para o dia a dia com sofisticação.</p>
+        <span class="product-review">“Cheiro muito bom e com boa fixação, sem ficar muito forte.”</span>
+        <div class="price">R$ 119,90</div>
+        <small class="installment">ou 3x de R$ 39,97 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Perfume Aura Floral', 119.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 7 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85" alt="Óleo capilar Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Óleo Capilar Luminous</h3>
+        <div class="rating">5,0 <span>(37 avaliações)</span></div>
+        <p class="product-description">Óleo capilar leve que ajuda a reduzir o frizz e traz brilho sem deixar os fios pesados.</p>
+        <span class="product-review">“Tenho usado nos fios secos e eles ficam super bonitos e hidratados.”</span>
+        <div class="price">R$ 64,90</div>
+        <small class="installment">ou 3x de R$ 21,63 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Óleo Capilar Luminous', 64.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 8 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=700&q=85');"></div>
+
+      <div class="product-info">
+        <div class="category-name">Skincare</div>
+        <h3>Vitamina C Sérum</h3>
+        <div class="rating">5,0 <span>(45 avaliações)</span></div>
+        <p class="product-description">Sérum com vitamina C para deixar a pele com aparência uniforme, iluminada e revitalizada.</p>
+        <span class="product-review">“A pele parece mais fresca e bem iluminada desde o primeiro uso.”</span>
+        <div class="price">R$ 69,90</div>
+        <small class="installment">ou 3x de R$ 23,30 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Vitamina C Sérum', 69.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 9 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=85" alt="Shampoo para cabelo Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Shampoo Fresh Balance</h3>
+        <div class="rating">5,0 <span>(22 avaliações)</span></div>
+        <p class="product-description">Shampoo suave que limpa sem ressecar, equilibrando oleosidade e deixando o cabelo leve.</p>
+        <span class="product-review">“Cabelo bem limpinho, sem ficar seco e com sensação de frescor.”</span>
+        <div class="price">R$ 39,90</div>
+        <small class="installment">ou 2x de R$ 19,95 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Shampoo Fresh Balance', 39.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 10 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85" alt="Condicionador para cabelo Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Condicionador Silk Care</h3>
+        <div class="rating">5,0 <span>(18 avaliações)</span></div>
+        <p class="product-description">Condicionador para desembaraçar os fios e dar maciez com um toque suave e elegante.</p>
+        <span class="product-review">“Meu cabelo fica muito mais fácil de arrumar e com aspecto saudável.”</span>
+        <div class="price">R$ 42,90</div>
+        <small class="installment">ou 2x de R$ 21,45 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Condicionador Silk Care', 42.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 11 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=85" alt="Leave-in para cabelo Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Leave-in Definição Leve</h3>
+        <div class="rating">5,0 <span>(27 avaliações)</span></div>
+        <p class="product-description">Leave-in leve para definir os fios, controlar o frizz e proteger da chapinha.</p>
+        <span class="product-review">“A textura é ótima e o cabelo fica definido sem ficar pesado.”</span>
+        <div class="price">R$ 49,90</div>
+        <small class="installment">ou 2x de R$ 24,95 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Leave-in Definição Leve', 49.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 12 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=85" alt="Kit de reconstrução capilar Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Kit Reconstrução Intensa</h3>
+        <div class="rating">5,0 <span>(34 avaliações)</span></div>
+        <p class="product-description">Kit completo com cuidado para fortalecer, nutrir e recuperar cabelos danificados.</p>
+        <span class="product-review">“Meu cabelo ficou muito mais forte e com menos quebra.”</span>
+        <div class="price">R$ 89,90</div>
+        <small class="installment">ou 3x de R$ 29,97 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Kit Reconstrução Intensa', 89.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 13 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=85" alt="Máscara de hidratação capilar Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Máscara Hidratação Profunda</h3>
+        <div class="rating">5,0 <span>(29 avaliações)</span></div>
+        <p class="product-description">Máscara intensiva para devolver hidratação, brilho e movimento aos cabelos ressecados.</p>
+        <span class="product-review">“Depois de usar, até o cabelo mais seco fica com cara de bem cuidado.”</span>
+        <div class="price">R$ 57,90</div>
+        <small class="installment">ou 3x de R$ 19,30 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Máscara Hidratação Profunda', 57.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 14 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=700&q=85" alt="Spray protetor térmico Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Spray Protetor Térmico</h3>
+        <div class="rating">5,0 <span>(21 avaliações)</span></div>
+        <p class="product-description">Spray protetor térmico para preservar o brilho e proteger os fios ao usar secador ou chapinha.</p>
+        <span class="product-review">“Ajuda demais a evitar frizz e deixa o cabelo com aspecto mais bonito.”</span>
+        <div class="price">R$ 46,90</div>
+        <small class="installment">ou 2x de R$ 23,45 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Spray Protetor Térmico', 46.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 15 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=700&q=85" alt="Creme para cachos Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Creme para Cachos Definidos</h3>
+        <div class="rating">5,0 <span>(33 avaliações)</span></div>
+        <p class="product-description">Creme para cachos com formulação leve para manter o volume, a definição e a maciez.</p>
+        <span class="product-review">“Definiu meus cachos sem deixar pesado, amei o resultado.”</span>
+        <div class="price">R$ 52,90</div>
+        <small class="installment">ou 2x de R$ 26,45 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Creme para Cachos Definidos', 52.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 16 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=700&q=85" alt="Tônico fortalecedor para cabelo Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Cabelos</div>
+        <h3>Tônico Fortalecedor Raiz</h3>
+        <div class="rating">5,0 <span>(26 avaliações)</span></div>
+        <p class="product-description">Tônico fortificante para estimular a raiz e fortalecer a estrutura capilar com uso regular.</p>
+        <span class="product-review">“Senti que o cabelo ficou mais forte e com menos quebras ao longo do tempo.”</span>
+        <div class="price">R$ 61,90</div>
+        <small class="installment">ou 3x de R$ 20,63 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Tônico Fortalecedor Raiz', 61.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- AUTOCUIDADO -->
+<section class="selfcare" id="autocuidado">
+
+  <div class="selfcare-text">
+
+    <h2>
+      Seu autocuidado merece um momento especial. 💕
+    </h2>
+
+    <p>
+      Separe alguns minutos do seu dia para cuidar de você.
+      Na Thaly Beauty, acreditamos que beleza não é apenas
+      aparência: é também se sentir bem, relaxar e valorizar
+      seus próprios momentos.
+    </p>
+
+    <a href="#produtos" class="hero-button">
+      Criar meu ritual
+    </a>
+
+  </div>
+
+  <div class="selfcare-image">🛁🌸✨</div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+
+  <h2 class="section-title">
+    Clube Thaly Beauty 💌
+  </h2>
+
+  <p>
+    Receba novidades, lançamentos e ofertas especiais.
+  </p>
+
+  <div class="newsletter-form">
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Seu melhor e-mail"
+    >
+
+    <button onclick="inscrever()">
+      Quero receber
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="contato">
+
+  <div class="footer-content">
+
+    <div>
+      <h3>Thaly Beauty ✨</h3>
+
+      <p>
+        Beleza, autocuidado e pequenos momentos
+        que fazem você se sentir ainda melhor.
+      </p>
+    </div>
+
+    <div>
+      <h3>Atendimento</h3>
+
+      <p>
+        WhatsApp<br>
+        (00) 00000-0000
+      </p>
+
+      <p>
+        contato@thalybeauty.com
+      </p>
+    </div>
+
+    <div>
+      <h3>Siga a gente</h3>
+
+      <p>
+        Instagram: @thalybeauty
+      </p>
+
+      <p>
+        TikTok: @thalybeauty
+      </p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Thaly Beauty — Todos os direitos reservados.
+  </div>
+
+</footer>
+
+
+<!-- MODAL CARRINHO -->
+<div class="cart-modal" id="cartModal">
+
+  <div class="cart">
+
+    <div class="cart-header">
+
+      <h2>Meu carrinho 🛍️</h2>
+
+      <button
+        class="close-cart"
+        onclick="fecharCarrinho()">
+        ×
+      </button>
+
+    </div>
+
+    <div id="listaCarrinho">
+      <p>Seu carrinho está vazio.</p>
+    </div>
+
+    <div class="cart-total">
+      Total: R$ <span id="total">0,00</span>
+    </div>
+
+    <div id="formEndereco" class="endereco-form">
+      <h3>Endereço de entrega</h3>
+
+      <label>
+        Nome completo
+        <input id="nomeEntrega" type="text" placeholder="Digite seu nome">
+      </label>
+
+      <label>
+        Rua
+        <input id="ruaEntrega" type="text" placeholder="Rua, avenida...">
+      </label>
+
+      <label>
+        Número
+        <input id="numeroEntrega" type="text" placeholder="123">
+      </label>
+
+      <label>
+        Cidade
+        <input id="cidadeEntrega" type="text" placeholder="Sua cidade">
+      </label>
+
+      <label>
+        CEP
+        <input id="cepEntrega" type="text" placeholder="00000-000">
+      </label>
+
+      <button type="button" onclick="confirmarEndereco()">
+        Confirmar endereço
+      </button>
+    </div>
+
+    <div id="trackingBox" class="tracking-box">
+      <h4>Rastreio do pedido</h4>
+      <div id="trackingCode" class="tracking-code">-</div>
+      <div id="trackingStatus" class="tracking-status">
+        Status: pedido confirmado
+      </div>
+    </div>
+
+    <button class="checkout" onclick="finalizarCompra()">
+      Finalizar compra
+    </button>
+
+  </div>
+
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite">
+  <div class="toast-card">
+    <div class="toast-icon">✓</div>
+    <h3>Compra concluída!</h3>
+    <p>Seu pedido foi registrado com sucesso.</p>
+    <div class="toast-code" id="toastCode">THY-XXXX</div>
+  </div>
+</div>
+
+
+<script>
+
+  let carrinho = [];
+  let total = 0;
+  let toastTimer;
+  let codigoRastreio = "";
+
+
+  // ADICIONAR PRODUTO
+  function adicionarCarrinho(nome, preco) {
+
+    carrinho.push({
+      nome: nome,
+      preco: preco
+    });
+
+    total += preco;
+
+    atualizarCarrinho();
+
+    abrirCarrinho();
+  }
+
+
+  // ATUALIZAR CARRINHO
+  function atualizarCarrinho() {
+
+    const lista = document.getElementById("listaCarrinho");
+    const contador = document.getElementById("contador");
+    const totalElemento = document.getElementById("total");
+
+    contador.textContent = carrinho.length;
+
+    totalElemento.textContent =
+      total.toFixed(2).replace(".", ",");
+
+
+    if (carrinho.length === 0) {
+
+      lista.innerHTML =
+        "<p>Seu carrinho está vazio.</p>";
+
+      return;
+    }
+
+
+    lista.innerHTML = "";
+
+
+    carrinho.forEach((produto, index) => {
+
+      const item = document.createElement("div");
+
+      item.className = "cart-item";
+
+      item.innerHTML = `
+
+        <div>
+          <strong>${produto.nome}</strong>
+          <br>
+          R$ ${produto.preco
+            .toFixed(2)
+            .replace(".", ",")}
+        </div>
+
+        <button
+          class="remove"
+          onclick="removerProduto(${index})">
+          Remover
+        </button>
+
+      `;
+
+      lista.appendChild(item);
+
+    });
+
+  }
+
+
+  // REMOVER PRODUTO
+  function removerProduto(index) {
+
+    total -= carrinho[index].preco;
+
+    carrinho.splice(index, 1);
+
+    atualizarCarrinho();
+
+  }
+
+
+  // ABRIR CARRINHO
+  function abrirCarrinho() {
+
+    document.getElementById("cartModal")
+      .style.display = "block";
+
+    document.getElementById("formEndereco")
+      .style.display = "none";
+
+    document.querySelector(".checkout")
+      .style.display = "block";
+
+  }
+
+
+  // FECHAR CARRINHO
+  function fecharCarrinho() {
+
+    document.getElementById("cartModal")
+      .style.display = "none";
+
+    document.getElementById("formEndereco")
+      .style.display = "none";
+
+    document.querySelector(".checkout")
+      .style.display = "block";
+
+  }
+
+
+  // FINALIZAR COMPRA
+  function finalizarCompra() {
+
+    if (carrinho.length === 0) {
+
+      alert("Seu carrinho está vazio. 🛍️");
+
+      return;
+    }
+
+    document.getElementById("formEndereco")
+      .style.display = "block";
+
+    document.querySelector(".checkout")
+      .style.display = "none";
+
+  }
+
+
+  function mostrarNotificacao(mensagem) {
+
+    const toast = document.getElementById("toast");
+    const toastCode = document.getElementById("toastCode");
+
+    if (toastCode && mensagem.includes("Código de rastreio:")) {
+      const codigo = mensagem.split(": ")[1];
+      toastCode.textContent = codigo;
+    } else {
+      toastCode.textContent = "THY-XXXX";
+    }
+
+    const titulo = toast.querySelector("h3");
+    const texto = toast.querySelector("p");
+
+    titulo.textContent = mensagem.includes("Compra concluída") ? "Compra concluída!" : "Pedido confirmado!";
+    texto.textContent = mensagem.includes("Código de rastreio:")
+      ? "Seu pedido foi registrado com sucesso."
+      : mensagem;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3200);
+
+  }
+
+  function gerarCodigoRastreio() {
+
+    return "THY-" + Math.random()
+      .toString(36)
+      .slice(2, 8)
+      .toUpperCase();
+
+  }
+
+
+  function confirmarEndereco() {
+
+    const nome = document.getElementById("nomeEntrega").value.trim();
+    const rua = document.getElementById("ruaEntrega").value.trim();
+    const numero = document.getElementById("numeroEntrega").value.trim();
+    const cidade = document.getElementById("cidadeEntrega").value.trim();
+    const cep = document.getElementById("cepEntrega").value.trim();
+
+    if (!nome || !rua || !numero || !cidade || !cep) {
+      mostrarNotificacao("Preencha todos os campos do endereço.");
+      return;
+    }
+
+    codigoRastreio = gerarCodigoRastreio();
+
+    document.getElementById("trackingCode").textContent = codigoRastreio;
+    document.getElementById("trackingStatus").textContent =
+      "Status: pedido confirmado · em separação";
+    document.getElementById("trackingBox").style.display = "block";
+
+    mostrarNotificacao(
+      "Compra concluída! Código de rastreio: " + codigoRastreio
+    );
+
+    carrinho = [];
+    total = 0;
+    atualizarCarrinho();
+    document.getElementById("formEndereco").style.display = "none";
+    document.querySelector(".checkout").style.display = "block";
+    fecharCarrinho();
+
+  }
+
+
+  // FAVORITO
+  function favoritar(botao) {
+
+    botao.classList.toggle("active");
+    botao.setAttribute(
+      "aria-label",
+      botao.classList.contains("active") ? "Remover dos favoritos" : "Adicionar aos favoritos"
+    );
+
+  }
+
+
+  // NEWSLETTER
+  function inscrever() {
+
+    const email =
+      document.getElementById("email").value;
+
+    if (!email || !email.includes("@")) {
+
+      alert("Digite um e-mail válido.");
+
+      return;
+    }
+
+    alert(
+      "Pronto! 💌\n" +
+      "Você entrou para o Clube Thaly Beauty."
+    );
+
+    document.getElementById("email").value = "";
+
+  }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
