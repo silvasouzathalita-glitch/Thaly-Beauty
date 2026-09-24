@@ -144,17 +144,33 @@
     }
 
     .hero-circle {
-      width: min(44vw, 560px);
-      height: 560px;
+      width: min(48vw, 620px);
+      height: 620px;
       border-radius: 34px 34px 120px 120px;
       background-color: #f2dff4;
-      background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=85");
+      background-image: url("https://i.pinimg.com/736x/30/8f/ac/308fac40ca9b03f923dedfa57feaf991.jpg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       box-shadow: 0 24px 50px rgba(91,55,40,0.18);
       transform: rotate(2deg);
       overflow: hidden;
+    }
+
+    .hero-circle::after {
+      content: "♥";
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: #b83268;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      box-shadow: 0 8px 20px rgba(72, 24, 56, 0.2);
     }
 
     .catalog-photo {
@@ -231,6 +247,11 @@
       cursor: pointer;
       border: 1px solid #f5e1e8;
       transition: 0.3s;
+    }
+
+    .category.active {
+      border-color: #b85ac9;
+      box-shadow: 0 12px 30px rgba(145, 92, 195, 0.16);
     }
 
     .category:hover {
@@ -616,6 +637,33 @@
       font-weight: bold;
     }
 
+    .payment-options {
+      margin-top: 18px;
+    }
+
+    .payment-options h4 {
+      margin-bottom: 10px;
+      color: #5a3a44;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      border: 1px solid #e8d9df;
+      border-radius: 12px;
+      background: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .payment-option input {
+      width: auto;
+      margin: 0;
+    }
+
     .toast {
       position: fixed;
       inset: 0;
@@ -857,25 +905,25 @@
 <div class="benefits">
 
   <div class="benefit">
-    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=180&q=80');">🚚</div>
+    <div class="benefit-icon" style="background-image: url('https://i.pinimg.com/1200x/bd/4b/e5/bd4be51b66169dd67f23c6ad2f1c11dc.jpg');"></div>
     <h3>Envio rápido</h3>
     <p>Receba seus produtos com praticidade.</p>
   </div>
 
   <div class="benefit">
-    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=180&q=80');">💝</div>
+    <div class="benefit-icon" style="background-image: url('https://i.pinimg.com/736x/15/e3/af/15e3af2b78031aafec8d8b15256d1976.jpg');"></div>
     <h3>Feito para você</h3>
     <p>Produtos selecionados com carinho.</p>
   </div>
 
   <div class="benefit">
-    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=180&q=80');">🔒</div>
+    <div class="benefit-icon" style="background-image: url('https://i.pinimg.com/736x/a3/bd/37/a3bd379f5bd2d94099196453d71560f9.jpg');"></div>
     <h3>Compra segura</h3>
     <p>Seus dados protegidos.</p>
   </div>
 
   <div class="benefit">
-    <div class="benefit-icon" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=180&q=80');">💬</div>
+    <div class="benefit-icon" style="background-image: url('https://i.pinimg.com/1200x/b8/57/5a/b8575aae81b70666813b2ea3f0260fbe.jpg');"></div>
     <h3>Atendimento</h3>
     <p>Estamos aqui para ajudar.</p>
   </div>
@@ -896,33 +944,33 @@
 
   <div class="categories">
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=240&q=80');">🧴</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Skincare', this)" onkeydown="ativarCategoria(event, this, 'Skincare')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/01/ce/3f/01ce3fbc7e561e962fdc1f59e93e4e1e.jpg');"></div>
       <h3>Skincare</h3>
     </div>
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=240&q=80');">💇‍♀️</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Cabelos', this)" onkeydown="ativarCategoria(event, this, 'Cabelos')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/6c/61/c9/6c61c95ad03f8b92d7d7516f314fde1b.jpg');"></div>
       <h3>Cabelos</h3>
     </div>
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=240&q=80');">🧼</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Corpo', this)" onkeydown="ativarCategoria(event, this, 'Corpo')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/5b/23/25/5b2325bf77172a4b0d2d2f46378a436c.jpg');"></div>
       <h3>Corpo</h3>
     </div>
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=240&q=80');">💄</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Maquiagem', this)" onkeydown="ativarCategoria(event, this, 'Maquiagem')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/00/c5/d4/00c5d49999eddc9613474ad82fcc9802.jpg');"></div>
       <h3>Maquiagem</h3>
     </div>
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=240&q=80');">🎁</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Kits', this)" onkeydown="ativarCategoria(event, this, 'Kits')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/e2/d0/cc/e2d0cc6b99c93e80e9cdf243c20d5f95.jpg');"></div>
       <h3>Kits</h3>
     </div>
 
-    <div class="category">
-      <div class="category-icon" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=240&q=80');">🌸</div>
+    <div class="category" role="button" tabindex="0" onclick="filtrarCategoria('Perfume', this)" onkeydown="ativarCategoria(event, this, 'Perfume')">
+      <div class="category-icon" style="background-image: url('https://i.pinimg.com/736x/a7/92/7c/a7927cbed4f55e820ea78239c85a0584.jpg');"></div>
       <h3>Perfumes</h3>
     </div>
 
@@ -1355,6 +1403,91 @@
 
     </div>
 
+
+    <!-- PRODUTO 17 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://i.pinimg.com/736x/d7/b2/c1/d7b2c1e2b7480ed7992249d686d6b14b.jpg" alt="Kit de beleza Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Kits</div>
+        <h3>Kit Glow Completo</h3>
+        <div class="rating">5,0 <span>(18 avaliações)</span></div>
+        <p class="product-description">Uma seleção especial para deixar sua rotina de beleza mais prática, iluminada e gostosa.</p>
+        <span class="product-review">“Perfeito para montar um ritual completo de autocuidado.”</span>
+        <div class="price">R$ 99,90</div>
+        <small class="installment">ou 3x de R$ 33,30 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Kit Glow Completo', 99.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 18 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://i.pinimg.com/736x/d9/cc/d9/d9ccd9deb580deec0dc0c4dab90b70c8.jpg" alt="Creme iluminador Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Skincare</div>
+        <h3>Creme Iluminador Daily Glow</h3>
+        <div class="rating">5,0 <span>(15 avaliações)</span></div>
+        <p class="product-description">Textura confortável para hidratar a pele e realçar um brilho saudável todos os dias.</p>
+        <span class="product-review">“Deixa a pele viçosa e muito macia.”</span>
+        <div class="price">R$ 62,90</div>
+        <small class="installment">ou 3x de R$ 20,97 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Creme Iluminador Daily Glow', 62.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 19 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://i.pinimg.com/736x/da/d7/33/dad733ea0f75247e575eb1bd462e7ac1.jpg" alt="Perfume floral Thaly Beauty"></div>
+
+      <div class="product-info">
+        <div class="category-name">Perfume</div>
+        <h3>Essência Floral Elegance</h3>
+        <div class="rating">5,0 <span>(12 avaliações)</span></div>
+        <p class="product-description">Aroma floral delicado para acompanhar seus momentos com leveza, charme e sofisticação.</p>
+        <span class="product-review">“Uma fragrância elegante e muito confortável.”</span>
+        <div class="price">R$ 109,90</div>
+        <small class="installment">ou 3x de R$ 36,63 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Essência Floral Elegance', 109.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
+    <!-- PRODUTO 20 -->
+    <div class="product">
+
+      <button class="favorite" onclick="favoritar(this)">Favoritar</button>
+
+      <div class="product-image"><img src="https://i.pinimg.com/1200x/49/08/8d/49088d04ac765eda9c981266dd09ac1a.jpg" alt="Essência Concentrada Elegance 20ml"></div>
+
+      <div class="product-info">
+        <div class="category-name">Perfume</div>
+        <h3>Essência Concentrada Elegance 20ml</h3>
+        <div class="rating">5,0 <span>(14 avaliações)</span></div>
+        <p class="product-description">Essência concentrada com fragrância elegante para deixar sua rotina mais marcante e perfumada.</p>
+        <span class="product-review">“Cheiro sofisticado, delicado e com ótima fixação.”</span>
+        <div class="price">R$ 119,90</div>
+        <small class="installment">ou 3x de R$ 39,97 sem juros</small>
+        <button class="buy-button" onclick="adicionarCarrinho('Essência Concentrada Elegance 20ml', 119.90)">Comprar agora</button>
+      </div>
+
+    </div>
+
+
   </div>
 
 </section>
@@ -1466,11 +1599,11 @@
 <!-- MODAL CARRINHO -->
 <div class="cart-modal" id="cartModal">
 
-  <div class="cart">
+  <div class="cart" role="dialog" aria-modal="true" aria-labelledby="tituloCarrinho">
 
     <div class="cart-header">
 
-      <h2>Meu carrinho 🛍️</h2>
+      <h2 id="tituloCarrinho">Meu carrinho 🛍️</h2>
 
       <button
         class="close-cart"
@@ -1515,6 +1648,25 @@
         CEP
         <input id="cepEntrega" type="text" placeholder="00000-000">
       </label>
+
+      <div class="payment-options">
+        <h4>Forma de pagamento</h4>
+
+        <label class="payment-option">
+          <input type="radio" name="pagamento" value="Pix" checked>
+          Pix
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="pagamento" value="Cartão de crédito">
+          Cartão de crédito
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="pagamento" value="Boleto bancário">
+          Boleto bancário
+        </label>
+      </div>
 
       <button type="button" onclick="confirmarEndereco()">
         Confirmar endereço
@@ -1669,6 +1821,40 @@
   }
 
 
+  function filtrarCategoria(categoria, elemento) {
+
+    const produtos = document.querySelectorAll(".product");
+    const categoriaAtiva = elemento.classList.contains("active");
+
+    document.querySelectorAll(".category").forEach((categoriaElemento) => {
+      categoriaElemento.classList.remove("active");
+    });
+
+    produtos.forEach((produto) => {
+      const nomeCategoria = produto.querySelector(".category-name").textContent.trim();
+      const nomeProduto = produto.querySelector("h3").textContent.trim();
+      const corresponde = categoriaAtiva
+        || nomeCategoria === categoria
+        || (categoria === "Kits" && nomeProduto.startsWith("Kit"));
+
+      produto.style.display = corresponde ? "" : "none";
+    });
+
+    if (!categoriaAtiva) {
+      elemento.classList.add("active");
+    }
+  }
+
+
+  function ativarCategoria(evento, elemento, categoria) {
+
+    if (evento.key === "Enter" || evento.key === " ") {
+      evento.preventDefault();
+      filtrarCategoria(categoria, elemento);
+    }
+  }
+
+
   // FINALIZAR COMPRA
   function finalizarCompra() {
 
@@ -1705,7 +1891,7 @@
 
     titulo.textContent = mensagem.includes("Compra concluída") ? "Compra concluída!" : "Pedido confirmado!";
     texto.textContent = mensagem.includes("Código de rastreio:")
-      ? "Seu pedido foi registrado com sucesso."
+      ? "Seja uma diva, cheirosa e linda! Seu pedido foi registrado com sucesso."
       : mensagem;
 
     toast.classList.add("show");
@@ -1734,8 +1920,9 @@
     const numero = document.getElementById("numeroEntrega").value.trim();
     const cidade = document.getElementById("cidadeEntrega").value.trim();
     const cep = document.getElementById("cepEntrega").value.trim();
+    const pagamento = document.querySelector("input[name='pagamento']:checked");
 
-    if (!nome || !rua || !numero || !cidade || !cep) {
+    if (!nome || !rua || !numero || !cidade || !cep || !pagamento) {
       mostrarNotificacao("Preencha todos os campos do endereço.");
       return;
     }
@@ -1744,11 +1931,11 @@
 
     document.getElementById("trackingCode").textContent = codigoRastreio;
     document.getElementById("trackingStatus").textContent =
-      "Status: pedido confirmado · em separação";
+      "Status: pedido confirmado · " + pagamento.value + " · em separação";
     document.getElementById("trackingBox").style.display = "block";
 
     mostrarNotificacao(
-      "Compra concluída! Código de rastreio: " + codigoRastreio
+      "Compra concluída com " + pagamento.value + "! Código de rastreio: " + codigoRastreio
     );
 
     carrinho = [];
@@ -1794,6 +1981,19 @@
     document.getElementById("email").value = "";
 
   }
+
+
+  document.getElementById("cartModal").addEventListener("click", (evento) => {
+    if (evento.target.id === "cartModal") {
+      fecharCarrinho();
+    }
+  });
+
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") {
+      fecharCarrinho();
+    }
+  });
 
 </script>
 
